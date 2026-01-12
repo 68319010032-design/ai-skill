@@ -1,6 +1,7 @@
 const express = require('express');
 const pool = require('./db'); // ⭐ เพิ่ม
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -85,6 +86,7 @@ app.post('/check', async (req, res) => {
     }
 });
 
-app.listen(3000, () => {
-    console.log('Server running on port 3000');
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
